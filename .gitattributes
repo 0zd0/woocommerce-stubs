@@ -1,0 +1,17 @@
+/.devcontainer/ export-ignore
+/.github/ export-ignore
+/source/ export-ignore
+/src/ export-ignore
+/tests/ export-ignore
+/.editorconfig export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/finder.php export-ignore
+/functionMap.php export-ignore
+/generate.sh export-ignore
+/phpcs.xml.dist export-ignore
+/phpstan.neon.dist export-ignore
+/phpunit.xml.dist export-ignore
+/README.md export-ignore
+/release-latest-versions.sh export-ignore
+/visitor.php export-ignore

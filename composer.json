@@ -1,0 +1,55 @@
+{
+    "name": "onepix/woocommerce-stubs",
+    "description": "Stubs for the WooCommerce plugin for static analysis",
+    "license": "MIT",
+    "keywords": [
+        "wordpress",
+        "woocommerce",
+        "static analysis",
+        "phpstan",
+        "psalm"
+    ],
+    "homepage": "https://github.com/0zd0/wooocommerce-stubs",
+    "require-dev": {
+        "php": "^8.1",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "onepix/wordpress-stubs-generator": "^1.1",
+        "phpdocumentor/reflection-docblock": "^5.6",
+        "phpunit/phpunit": "^9.6",
+        "phpstan/phpstan": "^1.10"
+    },
+    "minimum-stability": "stable",
+    "autoload-dev": {
+        "psr-4": {
+            "Onepix\\Stubs\\WooCommerce\\": "src/"
+        },
+        "classmap": [
+            "tests/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "onepix/wordpress-stubs-generator": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "8.1.0"
+        }
+    },
+    "scripts": {
+        "cleanup": "git status --short --ignored | sed -n -e 's#^!! ##p' | xargs -r rm -vrf",
+        "test": [
+            "@test:phpunit",
+            "@test:phpstan",
+            "@test:cs"
+        ],
+        "test:cs": "phpcs",
+        "test:cs:fix": "phpcbf",
+        "test:phpstan": "phpstan analyze",
+        "test:phpunit": "phpunit",
+        "generate": "bash ./generate.sh"
+    },
+    "scripts-descriptions": {
+        "cleanup": "Remove all ignored files."
+    }
+}

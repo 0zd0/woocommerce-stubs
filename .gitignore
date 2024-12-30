@@ -1,0 +1,7 @@
+/.phpunit.result.cache
+/vendor/
+
+.idea
+
+source/woocommerce/*
+!source/woocommerce/.gitkeep
