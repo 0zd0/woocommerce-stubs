@@ -11,7 +11,9 @@
     },
     "mounts": [
         "source=${localWorkspaceFolder}/.devcontainer/php/php.ini,target=/usr/local/etc/php/conf.d/custom.ini,type=bind",
-        "source=${env:HOME}/.gitconfig,target=/root/.gitconfig,type=bind"
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached,ro",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/root/.gnupg,type=bind,consistency=cached,ro",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,type=bind,ro"
     ],
     "remoteUser": "root",
     "postCreateCommand": "composer install"
