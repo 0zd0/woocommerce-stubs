@@ -6,7 +6,6 @@
 set -e
 
 WC_JSON="$(curl -s "https://api.wordpress.org/plugins/info/1.0/woocommerce.json")"
-echo "$WC_JSON" | jq '.versions'
 
 # https://wordpress.org/plugins/woocommerce/advanced/
 for V in 9.5 9.6; do
@@ -29,11 +28,6 @@ for V in 9.5 9.6; do
     git status --ignored --short -- source/ | sed -n -e 's#^!! ##p' | xargs --no-run-if-empty -- rm -rf
     # Get new version
     printf -v SED_EXP 's#\\("woocommerce/woocommerce"\\): "[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+"#\\1: "%s"#' "${LATEST}"
-#    sed -i -e "$SED_EXP" source/composer.json
-    #composer run-script post-install-cmd
-    ## FIXME
-
-    #composer run-script post-install-cmd
     curl -L "https://downloads.wordpress.org/plugin/woocommerce.${LATEST}.zip" -o "source/woocommerce.${LATEST}.zip"
     unzip -q -d source/ source/woocommerce.*.zip
 
