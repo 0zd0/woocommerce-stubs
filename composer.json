@@ -47,7 +47,8 @@
         "test:cs:fix": "phpcbf",
         "test:phpstan": "phpstan analyze",
         "test:phpunit": "phpunit",
-        "generate": "bash ./generate.sh"
+        "generate": "bash ./generate.sh",
+        "generate-latest": "bash ./release-latest-versions.sh"
     },
     "scripts-descriptions": {
         "cleanup": "Remove all ignored files."
