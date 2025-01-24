@@ -11,6 +11,8 @@ DIR=$(dirname "$0")
 IGNORE_HOOKS=(
 "woocommerce_email_recipient_' . \$this->id"
 "woocommerce_process_' . \$post->post_type . '_meta"
+"woocommerce_order_action_' . sanitize_title( \$action )"
+"woocommerce_order_status_' . \$status_transition['to']"
 )
 IGNORE_HOOKS_STRING=$(IFS=,; echo "${IGNORE_HOOKS[*]}")
 
