@@ -5,7 +5,7 @@
 
 HEADER=$'/**\n * Generated stub declarations for woocommerce.\n * @see https://woocommerce.com\n * @see https://github.com/0zd0/woocommerce-stubs\n */'
 
-FILE="woocommerce-stubs.php"
+FILE="woocommerce-stubs.phpstub"
 DIR=$(dirname "$0")
 
 IGNORE_HOOKS=(

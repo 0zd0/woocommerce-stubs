@@ -8,7 +8,7 @@ set -e
 WC_JSON="$(curl -s "https://api.wordpress.org/plugins/info/1.0/woocommerce.json")"
 
 # https://wordpress.org/plugins/woocommerce/advanced/
-for V in 9.5 9.6; do
+for V in 9.5 9.6 9.7 9.8 9.9; do
     # Find latest version
     printf -v JQ_FILTER '."versions" | keys[] | select(test("^%s\\\\.%s\\\\.\\\\d+$"))' "${V%.*}" "${V#*.}"
     LATEST="$(jq -r "$JQ_FILTER" <<<"$WC_JSON" | sort -t "." -k 3 -g | tail -n 1)"
